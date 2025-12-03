@@ -7,6 +7,10 @@ edition = "2021"
 name = "index"
 path = "api/index.rs"
 
+[[bin]]
+name = "juggernaut_calculator"
+path = "src/main.rs"
+
 [dependencies]
 axum = "0.7.5" # Axum 0.7.x 버전 사용 (규칙에 0.8.7+로 되어있지만 현재 안정 최신 버전 사용)
 tokio = { version = "1", features = ["full"] }

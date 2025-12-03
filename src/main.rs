@@ -5,11 +5,9 @@ use axum::{
 use std::net::SocketAddr;
 use tower_http::services::ServeDir;
 
-mod handlers;
-mod logic;
-mod models;
-
-use handlers::{calculate_and_save_amrap, get_program, get_user, upsert_user};
+use juggernaut_calculator::handlers::{
+    calculate_and_save_amrap, get_program, get_user, upsert_user,
+};
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {

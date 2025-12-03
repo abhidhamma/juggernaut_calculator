@@ -24,7 +24,7 @@ static ROUTER: Lazy<Router> = Lazy::new(|| {
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     dotenvy::dotenv().ok();
-    run(handler).await?;
+    run(handler).await.map_err(anyhow::Error::new)?;
     Ok(())
 }
 

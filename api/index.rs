@@ -3,7 +3,6 @@ use axum::{
     Router,
 };
 use std::net::SocketAddr;
-use tower_http::services::ServeDir;
 
 use juggernaut_calculator::handlers::{
     calculate_and_save_amrap, get_program, get_user, upsert_user,
@@ -20,8 +19,8 @@ async fn main() -> anyhow::Result<()> {
         .route("/api/program/:username", get(get_program))
         .route("/api/amrap/:username", post(calculate_and_save_amrap));
 
-    // API 라우터를 먼저 시도하고, 없으면 정적 파일 서빙으로 fallback
-    let app = api_router.fallback_service(get_service(ServeDir::new("assets")));
+    // Vercel 라우팅 규칙에 따라 API 라우터만 정의
+    let app = api_router;
 
     // 서버 실행
     let addr = SocketAddr::from(([127, 0, 0, 1], 3000));

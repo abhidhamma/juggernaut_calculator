@@ -2,16 +2,17 @@
     "builds": [
         {
             "src": "api/index.rs",
-            "use": "@vercel/rust",
-            "config": {
-                "includeFiles": "assets/**"
-            }
+            "use": "@vercel/rust"
         }
     ],
     "routes": [
         {
-            "src": "/(.*)",
+            "src": "/api/(.*)",
             "dest": "index"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/assets/$1"
         }
     ]
 }

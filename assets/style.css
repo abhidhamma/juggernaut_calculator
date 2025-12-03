@@ -1,0 +1,199 @@
+/* 1. 루트 변수 및 기본 설정 (shadcn/ui 스타일) */
+:root {
+    --background: #09090b; /* 22, 22, 24 */
+    --foreground: #fafafa; /* 250, 250, 250 */
+    --card: #18181b;       /* 39, 39, 42 */
+    --card-foreground: #fafafa;
+    --popover: #18181b;
+    --popover-foreground: #fafafa;
+    --primary: #3b82f6;    /* Blue 500 */
+    --primary-foreground: #fafafa;
+    --secondary: #27272a;  /* Zinc 800 */
+    --secondary-foreground: #fafafa;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa; /* Zinc 400 */
+    --accent: #27272a;
+    --accent-foreground: #fafafa;
+    --border: #27272a;
+    --input: #27272a;
+    --ring: #3b82f6;
+    --radius: 0.5rem;
+}
+
+body {
+    font-family: 'KoPub Dotum', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background);
+    color: var(--foreground);
+    margin: 0;
+    padding: 1rem;
+}
+
+/* 2. 레이아웃 */
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* 3. 타이포그래피 */
+h1, h2, h3 {
+    color: var(--foreground);
+    font-weight: 700;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    font-size: 2.25rem;
+}
+
+/* 4. 컴포넌트: 카드 (섹션) */
+.user-input-section, #lift-inputs, #amrap-section, .program-week {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background-color: var(--card);
+}
+
+/* 5. 컴포넌트: 입력 필드 */
+label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--input);
+    border-radius: var(--radius);
+    box-sizing: border-box;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--ring);
+    box-shadow: 0 0 0 1px var(--ring);
+}
+
+/* 6. 컴포넌트: 버튼 */
+button {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    transition: background-color 0.15s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(59, 130, 246, 0.9);
+}
+
+/* 7. 유틸리티 및 그룹 */
+.hidden {
+    display: none;
+}
+
+.selector-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    background-color: var(--card);
+    padding: 1rem;
+    border-radius: var(--radius);
+}
+
+.lift-input-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.program-week h3 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+}
+
+.program-day {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--border);
+}
+
+.program-day h4 {
+    margin-bottom: 0.5rem;
+    color: var(--card-foreground);
+}
+
+.program-day ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.program-day li {
+    background: var(--secondary);
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 0;
+}
+
+.set-formula {
+    font-size: 0.8em;
+    color: var(--muted-foreground);
+    padding-left: 1rem;
+    margin-top: -0.5rem; /* 바로 위 항목과의 간격 줄이기 */
+    background: none !important;
+    padding-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+/* 8. 모바일 반응형 디자인 */
+@media (max-width: 600px) {
+    body {
+        padding: 0.5rem;
+    }
+    .container {
+        padding: 1rem;
+        border: none;
+        background: none;
+    }
+    .selector-group {
+        flex-direction: column;
+    }
+    .lift-input-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    .lift-input-row input {
+        margin-top: 0.25rem;
+    }
+    button {
+        width: 100%;
+        margin-right: 0;
+    }
+}

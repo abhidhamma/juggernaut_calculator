@@ -1,0 +1,22 @@
+[package]
+name = "juggernaut_calculator"
+version = "0.1.0"
+edition = "2021"
+
+[package.metadata.vercel]
+include = ["assets", "src", "Cargo.toml", "Cargo.lock"]
+
+[dependencies]
+axum = "0.7.5" # Axum 0.7.x 버전 사용 (규칙에 0.8.7+로 되어있지만 현재 안정 최신 버전 사용)
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tower-http = { version = "0.5.2", features = ["fs"] }
+anyhow = "1.0" # 에러 핸들링용
+reqwest = { version = "0.12", features = ["json"] }
+dotenvy = "0.15"
+
+[dev-dependencies]
+tower = { version = "0.4", features = ["util"] }
+axum-test = "15.0.0"
+once_cell = "1.19.0"

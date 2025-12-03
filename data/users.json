@@ -1,0 +1,39 @@
+{
+  "한지훈": {
+    "name": "한지훈",
+    "lift_history": {
+      "1-5s": {
+        "bench_press": 102.78,
+        "squat": 99.72,
+        "deadlift": 92.5,
+        "overhead_press": 76.11
+      },
+      "1-8s": {
+        "bench_press": 100.56,
+        "squat": 92.78,
+        "deadlift": 84.17,
+        "overhead_press": 72.22
+      },
+      "1-10s": {
+        "bench_press": 100.0,
+        "squat": 90.0,
+        "deadlift": 80.0,
+        "overhead_press": 70.0
+      }
+    },
+    "amrap_history": {
+      "1-8s": {
+        "bench_press": 12,
+        "squat": 13,
+        "deadlift": 14,
+        "overhead_press": 15
+      },
+      "1-10s": {
+        "bench_press": 11,
+        "squat": 12,
+        "deadlift": 13,
+        "overhead_press": 14
+      }
+    }
+  }
+}

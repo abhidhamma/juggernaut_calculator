@@ -6,7 +6,7 @@ use juggernaut_calculator::handlers::{
     calculate_and_save_amrap, get_program, get_user, upsert_user,
 };
 use tower_http::services::ServeDir;
-use vercel_runtime::{run, Body, Error, Request, Response};
+use vercel_runtime::run;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -21,9 +21,4 @@ async fn main() -> anyhow::Result<()> {
 
     run(app).await?;
     Ok(())
-}
-
-/** 이 핸들러는 vercel_runtime::run(app)을 사용하므로 실제로는 호출되지 않음 */
-async fn handler(req: Request) -> Result<Response<Body>, Error> {
-    Ok(Response::builder().status(200).body(Body::Empty)?)
 }

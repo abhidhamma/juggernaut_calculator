@@ -23,7 +23,7 @@ tower-http = { version = "0.5.2", features = ["fs"] }
 anyhow = "1.0" # 에러 핸들링용
 reqwest = { version = "0.12", features = ["json"] }
 dotenvy = "0.15"
-vercel_runtime = "1.2.0"
+vercel_runtime = "2.0.0"
 
 [dev-dependencies]
 tower = { version = "0.4", features = ["util"] }

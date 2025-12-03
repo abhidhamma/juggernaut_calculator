@@ -3,8 +3,9 @@ name = "juggernaut_calculator"
 version = "0.1.0"
 edition = "2021"
 
-[package.metadata.vercel]
-include = ["assets", "src", "Cargo.toml", "Cargo.lock"]
+[[bin]]
+name = "index"
+path = "api/index.rs"
 
 [dependencies]
 axum = "0.7.5" # Axum 0.7.x 버전 사용 (규칙에 0.8.7+로 되어있지만 현재 안정 최신 버전 사용)

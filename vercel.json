@@ -1,0 +1,17 @@
+{
+    "builds": [
+        {
+            "src": "api/index.rs",
+            "use": "@vercel/rust",
+            "config": {
+                "includeFiles": "assets/**"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "index"
+        }
+    ]
+}

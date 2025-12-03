@@ -2,9 +2,7 @@
     "functions": {
         "api/index.rs": {
             "runtime": "vercel-rust@4.0.9",
-            "config": {
-                "includeFiles": "public/**"
-            }
+            "includeFiles": "public/**"
         }
     }
 }

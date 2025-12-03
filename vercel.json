@@ -8,11 +8,7 @@
     "routes": [
         {
             "src": "/api/(.*)",
-            "dest": "index"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/assets/$1"
+            "dest": "/api/index"
         }
     ]
 }

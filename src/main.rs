@@ -21,7 +21,7 @@ async fn main() -> anyhow::Result<()> {
         .route("/api/amrap/:username", post(calculate_and_save_amrap));
 
     // API 라우터를 먼저 시도하고, 없으면 정적 파일 서빙으로 fallback
-    let app = api_router.fallback_service(get_service(ServeDir::new("assets")));
+    let app = api_router.fallback_service(get_service(ServeDir::new("public")));
 
     // 서버 실행
     let addr = SocketAddr::from(([127, 0, 0, 1], 3000));

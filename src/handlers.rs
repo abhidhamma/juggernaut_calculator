@@ -7,6 +7,7 @@ use serde::Deserialize;
 use std::env;
 
 use crate::{
+    // 'crate::'를 사용하여 라이브러리 루트에서 모듈을 가져옴
     logic::{calculate_new_3rm, generate_single_week_program, LiftType},
     models::{AmrapReps, Lifts, ProgramWeek, User},
 };
